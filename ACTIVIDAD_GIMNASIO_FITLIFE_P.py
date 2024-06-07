@@ -67,7 +67,7 @@ while True:
                     if c[2]>0:#verificamos si hay cupos
                         centinelaCupo=True
                         #realizar la reserva
-                        reservas.append({codigo, usuarios[codigo],c[0],c[1]})
+                        reservas.append([codigo, usuarios[codigo],c[0],c[1]])
                         exito("Reserva Realizada")
                         #descontar cupo
                         actualizacionCupo= (c[0],c[1],c[2]-1)
@@ -97,7 +97,7 @@ while True:
                 if r[0]==codigo:
                     print(f"{r[0]} {r[1]} Curso:{r[2]} Horario: {r[3]}")
                     centinela=True
-                if centinela==False:
+            if centinela==False:
                     error("El codigo no tiene reservas asociadas")
         else:
             error("No existen reseras")
